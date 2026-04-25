@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>عدسة الابتكار — اكتشف الابتكار من حولك</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
+
+<!-- ═══ HEADER ═══ -->
+<header>
+  <a href="#" class="logo">
+    <div class="logo-icon">
+      <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="18" cy="18" r="10" stroke="#4dabf7" stroke-width="1.5"/>
+        <circle cx="18" cy="18" r="5" fill="rgba(77,171,247,0.2)" stroke="#9775fa" stroke-width="1.5"/>
+        <line x1="18" y1="5" x2="18" y2="2" stroke="#4dabf7" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="18" y1="31" x2="18" y2="34" stroke="#4dabf7" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="5" y1="18" x2="2" y2="18" stroke="#4dabf7" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="31" y1="18" x2="34" y2="18" stroke="#4dabf7" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="18" cy="18" r="2" fill="#4dabf7"/>
+      </svg>
+    </div>
+    <span class="logo-text">Innovation <span>Lens</span></span>
+  </a>
+  <div class="header-right">
+    <a href="https://www.linkedin.com/in/lamatalalalharbi" target="_blank" rel="noopener" class="linkedin-badge">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      <span dir="ltr">Built by Lama Alharbi</span>
+    </a>
+  </div>
+</header>
+
+<!-- ═══ MAIN ═══ -->
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <button class="hero-eyebrow-btn" onclick="openModal()" id="scamperBtn">
+      <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4" stroke="#4dabf7" stroke-width="1.2"/><circle cx="5" cy="5" r="1.5" fill="#4dabf7"/></svg>
+      <span id="heroEyebrow">ما هو إطار SCAMPER؟</span>
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2.5v7M2.5 6h7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <h1 id="heroTitle">اكتشف <span class="gradient-text">الابتكار</span><br/>من حولك</h1>
+    <p class="hero-desc" id="heroDesc">أدخل أي منتج أو تطبيق أو فكرة، وستكشف لك الأداة <em>لماذا</em> هي مبتكرة — من خلال تحليل دقيق وفق أبعاد SCAMPER السبعة.</p>
+    <p class="hero-purpose" id="heroPurpose">الهدف من هذه الأداة تنمية الوعي بالابتكار وتطوير تفكيرك النقدي تجاه المنتجات والأفكار من حولك.</p>
+
+    <div class="scamper-legend" id="scamperLegend">
+      <div class="legend-chip" style="background:rgba(255,107,107,0.1);border-color:rgba(255,107,107,0.25);color:var(--s-color)" dir="ltr"><span class="letter">S</span><span class="chip-label" data-en="Substitute" data-ar="الاستبدال">الاستبدال</span></div>
+      <div class="legend-chip" style="background:rgba(255,169,77,0.1);border-color:rgba(255,169,77,0.25);color:var(--c-color)" dir="ltr"><span class="letter">C</span><span class="chip-label" data-en="Combine" data-ar="الدمج">الدمج</span></div>
+      <div class="legend-chip" style="background:rgba(255,224,102,0.07);border-color:rgba(255,224,102,0.2);color:var(--a-color)" dir="ltr"><span class="letter">A</span><span class="chip-label" data-en="Adapt" data-ar="التكيّف">التكيّف</span></div>
+      <div class="legend-chip" style="background:rgba(105,219,124,0.08);border-color:rgba(105,219,124,0.2);color:var(--m-color)" dir="ltr"><span class="letter">M</span><span class="chip-label" data-en="Modify" data-ar="التعديل">التعديل</span></div>
+      <div class="legend-chip" style="background:rgba(77,171,247,0.08);border-color:rgba(77,171,247,0.2);color:var(--p-color)" dir="ltr"><span class="letter">P</span><span class="chip-label" data-en="Put to Other Use" data-ar="توظيف جديد">توظيف جديد</span></div>
+      <div class="legend-chip" style="background:rgba(151,117,250,0.08);border-color:rgba(151,117,250,0.2);color:var(--e-color)" dir="ltr"><span class="letter">E</span><span class="chip-label" data-en="Eliminate" data-ar="الحذف">الحذف</span></div>
+      <div class="legend-chip" style="background:rgba(247,131,172,0.08);border-color:rgba(247,131,172,0.2);color:var(--r-color)" dir="ltr"><span class="letter">R</span><span class="chip-label" data-en="Reverse" data-ar="العكس">العكس</span></div>
+    </div>
+  </section>
+
+  <!-- INPUT -->
+  <section class="input-section">
+    <div class="input-card">
+      <label class="input-label" for="innovationInput" id="inputLabel">أدخل الابتكار الذي تريد تحليله</label>
+      <div class="input-row">
+        <input
+          type="text"
+          id="innovationInput"
+          class="innovation-input"
+          placeholder="مثال: Airbnb، Uber، كاميرا iPhone، أكواب القهوة القابلة للاستخدام..."
+          autocomplete="off"
+        />
+        <button class="analyze-btn" id="analyzeBtn" onclick="analyzeInnovation()">تحليل ←</button>
+      </div>
+      <div class="input-options">
+        <div class="lang-toggle" id="langToggle">
+          <button class="lang-btn" onclick="setLang('en')" id="btnEn">English</button>
+          <button class="lang-btn active" onclick="setLang('ar')" id="btnAr">العربية</button>
+        </div>
+        <span class="input-hint" id="inputHint">اضغط Enter أو انقر على "تحليل" للبدء</span>
+      </div>
+      <div class="error-msg" id="errorMsg"></div>
+    </div>
+  </section>
+
+  <!-- LOADING -->
+  <div class="loading-state" id="loadingState">
+    <div class="lens-spinner"></div>
+    <p class="loading-text" id="loadingText">جارٍ التحليل عبر عدسة الابتكار...</p>
+  </div>
+
+  <!-- RESULTS -->
+  <section class="results-section" id="resultsSection">
+    <div class="results-header">
+      <div class="results-subtitle" id="resultsSubtitle">تحليل SCAMPER</div>
+      <div class="innovation-title" id="innovationTitle"></div>
+    </div>
+    <div class="dimensions-grid" id="dimensionsGrid"></div>
+    <div class="summary-card" id="summaryCard">
+      <div class="summary-label" id="summaryLabel">خلاصة القول</div>
+      <p class="summary-text" id="summaryText"></p>
+    </div>
+    <div class="results-actions">
+      <button class="btn-secondary" onclick="resetTool()" id="analyzeAnotherBtn">تحليل ابتكار آخر ←</button>
+    </div>
+  </section>
+
+  <!-- EXAMPLES -->
+  <section class="examples-section" id="examplesSection">
+    <div class="section-header">
+      <div class="section-eyebrow" id="examplesEyebrow">أمثلة توضيحية</div>
+      <h2 class="section-title" id="examplesTitle">استلهم من هذه الأمثلة</h2>
+    </div>
+    <div class="examples-grid" id="examplesGrid"></div>
+  </section>
+
+</main>
+
+<!-- ═══ SCAMPER MODAL ═══ -->
+<div class="modal-backdrop" id="scamperModal" onclick="handleBackdropClick(event)">
+  <div class="modal-box" role="dialog" aria-modal="true">
+    <div class="modal-header">
+      <div class="modal-title" id="modalTitle">ما هو إطار SCAMPER؟</div>
+      <button class="modal-close" onclick="closeModal()" aria-label="إغلاق">✕</button>
+    </div>
+    <p class="modal-intro" id="modalIntro">
+      SCAMPER هو إطار تفكير إبداعي طوّره Bob Eberle بهدف توليد أفكار مبتكرة عن طريق إعادة النظر في المنتجات والعمليات من زوايا مختلفة. كل حرف يمثّل أسلوباً مختلفاً للابتكار.
+    </p>
+    <div class="modal-letters" id="modalLetters"></div>
+  </div>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <p class="footer-tagline" id="footerTagline">أداة تعليمية لتنمية الوعي بالابتكار</p>
+</footer>
+
+<!-- Script -->
+<script src="/src/main.js"></script>
+
+</body>
+</html>
