@@ -597,6 +597,32 @@ h1 {
   line-height: 1.8;
 }
 
+/* Weak dimensions (< 50%) */
+.dim-card-weak {
+  opacity: 0.4;
+  padding: 14px 24px;
+}
+.dim-card-weak:hover {
+  opacity: 0.55;
+  transform: none;
+  border-color: var(--border-subtle);
+  background: var(--bg-card);
+}
+
+.dim-letter-weak {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: var(--text-muted) !important;
+}
+
+.dim-badge-na {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  padding: 3px 12px;
+  border-radius: 100px;
+  border: 1px solid var(--border-subtle);
+  background: rgba(255, 255, 255, 0.02);
+}
+
 /* Summary */
 .summary-card {
   background: linear-gradient(135deg, rgba(77,171,247,0.05), rgba(151,117,250,0.05));
