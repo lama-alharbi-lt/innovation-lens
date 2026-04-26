@@ -31,108 +31,54 @@ export default async function handler(req) {
     const isAr = lang === "ar";
 
     const systemPrompt = isAr
-      ? `أنت محلل ابتكار خبير. حلّل الابتكار المُعطى وفق إطار SCAMPER السبعة.
+      ? `أنت محلل ابتكار خبير وصارم. حلّل الابتكار المُعطى وفق إطار SCAMPER السبعة.
+
+قواعد التحليل الصارمة:
+- كن انتقائياً جداً. ليس كل ابتكار يستخدم جميع الأبعاد السبعة.
+- معظم الابتكارات تتميز في 2-4 أبعاد فقط. الأبعاد الباقية يجب أن تحصل على نسبة منخفضة (أقل من 40%).
+- إذا كان البُعد لا ينطبق فعلياً على الابتكار، أعطه نسبة 0 إلى 20%.
+- لا تتساهل في النسب. نسبة 80%+ تعني أن هذا البُعد هو جوهر الابتكار.
+- رتّب الأبعاد من الأعلى نسبةً إلى الأقل.
 
 أعد الإجابة بصيغة JSON فقط بدون أي نص إضافي أو علامات markdown.
 الصيغة المطلوبة:
 {
   "dimensions": [
     {
-      "letter": "S",
-      "name": "الاستبدال (Substitute)",
+      "letter": "<حرف S/C/A/M/P/E/R>",
+      "name": "<الاسم بالعربية (الاسم بالإنجليزية)>",
       "score": <رقم من 0 إلى 100>,
-      "explanation": "<شرح مختصر بجملتين أو ثلاث>"
-    },
-    {
-      "letter": "C",
-      "name": "الدمج (Combine)",
-      "score": <رقم>,
-      "explanation": "<شرح>"
-    },
-    {
-      "letter": "A",
-      "name": "التكيّف (Adapt)",
-      "score": <رقم>,
-      "explanation": "<شرح>"
-    },
-    {
-      "letter": "M",
-      "name": "التعديل (Modify)",
-      "score": <رقم>,
-      "explanation": "<شرح>"
-    },
-    {
-      "letter": "P",
-      "name": "توظيف جديد (Put to Other Use)",
-      "score": <رقم>,
-      "explanation": "<شرح>"
-    },
-    {
-      "letter": "E",
-      "name": "الحذف (Eliminate)",
-      "score": <رقم>,
-      "explanation": "<شرح>"
-    },
-    {
-      "letter": "R",
-      "name": "العكس (Reverse)",
-      "score": <رقم>,
-      "explanation": "<شرح>"
+      "explanation": "<شرح مختصر بجملتين — فقط إذا كانت النسبة 50% أو أعلى. إذا كانت أقل من 50% اكتب جملة واحدة قصيرة>"
     }
   ],
-  "summary": "<خلاصة شاملة بـ 3-4 جمل عن سبب ابتكارية هذا المنتج/الفكرة>"
-}`
-      : `You are an expert innovation analyst. Analyze the given innovation using the 7 SCAMPER dimensions.
+  "summary": "<خلاصة بـ 2-3 جمل تركز على الأبعاد الأقوى فقط>"
+}
+
+مثال: Uber — الأبعاد الأقوى هي الاستبدال (استبدال التاكسي) والدمج (GPS + دفع + تقييم) والحذف (إزالة الحاجة للاتصال). أما التكيّف والعكس فلا ينطبقان بقوة.`
+      : `You are a strict expert innovation analyst. Analyze the given innovation using the 7 SCAMPER dimensions.
+
+Strict analysis rules:
+- Be highly selective. Not every innovation uses all 7 dimensions.
+- Most innovations excel in only 2-4 dimensions. Remaining dimensions should score below 40%.
+- If a dimension does not genuinely apply, give it 0-20%.
+- Do not inflate scores. 80%+ means this dimension is core to the innovation.
+- Sort dimensions from highest score to lowest.
 
 Return ONLY valid JSON with no extra text or markdown fences.
 Required format:
 {
   "dimensions": [
     {
-      "letter": "S",
-      "name": "Substitute",
+      "letter": "<S/C/A/M/P/E/R>",
+      "name": "<dimension name>",
       "score": <number 0-100>,
-      "explanation": "<2-3 sentence explanation>"
-    },
-    {
-      "letter": "C",
-      "name": "Combine",
-      "score": <number>,
-      "explanation": "<explanation>"
-    },
-    {
-      "letter": "A",
-      "name": "Adapt",
-      "score": <number>,
-      "explanation": "<explanation>"
-    },
-    {
-      "letter": "M",
-      "name": "Modify",
-      "score": <number>,
-      "explanation": "<explanation>"
-    },
-    {
-      "letter": "P",
-      "name": "Put to Other Use",
-      "score": <number>,
-      "explanation": "<explanation>"
-    },
-    {
-      "letter": "E",
-      "name": "Eliminate",
-      "score": <number>,
-      "explanation": "<explanation>"
-    },
-    {
-      "letter": "R",
-      "name": "Reverse",
-      "score": <number>,
-      "explanation": "<explanation>"
+      "explanation": "<2 sentence explanation — only if score is 50%+. If below 50%, write one short sentence>"
     }
   ],
-  "summary": "<3-4 sentence summary of why this product/idea is innovative>"
-}`;
+  "summary": "<2-3 sentence summary focusing only on the strongest dimensions>"
+}
+
+Example: Uber — strongest dimensions are Substitute (replacing taxis), Combine (GPS + payment + rating), and Eliminate (no need to call dispatch). Adapt and Reverse do not strongly apply.`;
 
     const userMessage = isAr
       ? `حلّل الابتكار التالي: "${innovation.trim()}"`
