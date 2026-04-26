@@ -292,14 +292,35 @@ window.analyzeInnovation = analyzeInnovation;
 function renderResults(innovationName, data) {
   const grid = document.getElementById("dimensionsGrid");
   const dims = data.dimensions || [];
+  const t = i18n[currentLang];
+  const notApplicableText = currentLang === "ar" ? "لا ينطبق" : "Not applicable";
 
   document.getElementById("innovationTitle").textContent = innovationName;
 
-  grid.innerHTML = dims
+  // Sort by score descending
+  const sorted = [...dims].sort((a, b) => b.score - a.score);
+
+  grid.innerHTML = sorted
     .map((dim, i) => {
       const color = DIM_COLORS[dim.letter] || "#4dabf7";
+      const isWeak = dim.score < 50;
+      const cardClass = isWeak ? "dim-card dim-card-weak" : "dim-card";
+
+      if (isWeak) {
+        return `
+        <div class="${cardClass}" style="animation-delay:${i * 0.08}s">
+          <div class="dim-top">
+            <div class="dim-label">
+              <div class="dim-letter dim-letter-weak">${dim.letter}</div>
+              <span class="dim-name">${dim.name}</span>
+            </div>
+            <span class="dim-badge-na">${notApplicableText}</span>
+          </div>
+        </div>`;
+      }
+
       return `
-      <div class="dim-card" style="--dim-color:${color}; animation-delay:${i * 0.08}s">
+      <div class="${cardClass}" style="--dim-color:${color}; animation-delay:${i * 0.08}s">
         <div class="dim-top">
           <div class="dim-label">
             <div class="dim-letter" style="background:${color}">${dim.letter}</div>
