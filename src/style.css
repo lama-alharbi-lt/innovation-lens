@@ -668,7 +668,7 @@ h1 {
 
 .examples-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 12px;
 }
 
@@ -676,7 +676,7 @@ h1 {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
   border-radius: var(--r-md);
-  padding: 18px 20px;
+  padding: 20px;
   cursor: pointer;
   transition: all 0.3s;
   text-align: center;
@@ -686,12 +686,6 @@ h1 {
   background: var(--bg-card-hover);
   transform: translateY(-3px);
   box-shadow: 0 8px 32px rgba(77, 171, 247, 0.08);
-}
-
-.example-emoji {
-  font-size: 1.8rem;
-  margin-bottom: 8px;
-  display: block;
 }
 
 .example-name {
