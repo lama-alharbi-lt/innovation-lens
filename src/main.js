@@ -87,20 +87,16 @@ const scamperData = {
 // ── Examples ──
 const examples = {
   ar: [
-    { emoji: "🏠", name: "Airbnb", desc: "منصة تأجير المنازل" },
-    { emoji: "🚗", name: "Uber", desc: "خدمة النقل الذكي" },
-    { emoji: "📱", name: "كاميرا iPhone", desc: "التصوير بالهاتف الذكي" },
-    { emoji: "🎧", name: "Spotify", desc: "بث الموسيقى" },
-    { emoji: "📦", name: "Amazon Prime", desc: "التوصيل السريع" },
-    { emoji: "🤖", name: "ChatGPT", desc: "الذكاء الاصطناعي التوليدي" },
+    { name: "Airbnb", desc: "منصة تأجير المنازل" },
+    { name: "Uber", desc: "خدمة النقل الذكي" },
+    { name: "Netflix", desc: "بث المحتوى حسب الطلب" },
+    { name: "Dyson Bladeless Fan", desc: "مروحة بدون شفرات" },
   ],
   en: [
-    { emoji: "🏠", name: "Airbnb", desc: "Home rental platform" },
-    { emoji: "🚗", name: "Uber", desc: "Smart transportation" },
-    { emoji: "📱", name: "iPhone Camera", desc: "Smartphone photography" },
-    { emoji: "🎧", name: "Spotify", desc: "Music streaming" },
-    { emoji: "📦", name: "Amazon Prime", desc: "Fast delivery" },
-    { emoji: "🤖", name: "ChatGPT", desc: "Generative AI" },
+    { name: "Airbnb", desc: "Home rental platform" },
+    { name: "Uber", desc: "Smart transportation" },
+    { name: "Netflix", desc: "On-demand streaming" },
+    { name: "Dyson Bladeless Fan", desc: "Bladeless fan technology" },
   ],
 };
 
@@ -185,7 +181,6 @@ function renderExamples() {
     .map(
       (ex) => `
     <div class="example-card" onclick="fillExample('${ex.name}')">
-      <span class="example-emoji">${ex.emoji}</span>
       <div class="example-name">${ex.name}</div>
       <div class="example-desc">${ex.desc}</div>
     </div>`
